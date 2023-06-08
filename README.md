@@ -1,3 +1,11 @@
+# WeGo - 송인구
+
+- Project Manager 역할 <br> - 깃 PR 관리 <br> - 코드 컨벤션 작성 
+- 뱃지/랭킹 기능 구현 <br> - Frontend [code](https://github.com/javahasooingu/project-wego-ingu/blob/main/src/main/webapp/resources/js/badge.js)  <br> - Backend [code](https://github.com/javahasooingu/project-wego-ingu/blob/main/src/main/java/org/zerock/wego/controller/BadgeController.java)
+- 로그인 시스템 구현 Backend <br> - Google, Kakao, Naver 소셜 로그인 [code](https://github.com/javahasooingu/project-wego-ingu/blob/main/src/main/java/org/zerock/wego/controller/LoginController.java) <br> - Interceptor를 통한 로그인 페이지 이동 
+- 산림청 API Parsing 및 DB 저장 
+- AWS EC2, Tomcat9 를 통한 서비스 배포 [⛰️WeGo⛰️](#배포-주소)
+
 # ⛰️ We Go 위고 ⛰️
 ----   
    ![WegoLogo](https://github.com/uniyunnnn/project-wego-jiyun/assets/103082984/52b8fb54-6ff3-4530-be4d-7927d98de4be)
@@ -92,13 +100,6 @@
 
 ## 기술 스택
 
-
-
-
-
-
-
-
 >    + 사용 언어 및 프레임워크<br>
 >        + <img src="https://img.shields.io/badge/JAVA.v17-ff9306?style=flat-square&logo=openJDK&logoColor=FFFFFF"/>
 >           <img src="https://img.shields.io/badge/Spring.v5.3-6DB33F?style=flat-square&logo=Spring&logoColor=FFFFFF"/>
@@ -120,7 +121,7 @@
 >        <img src="https://img.shields.io/badge/git-F05032?style=flat-square&logo=git&logoColor=FFFFFF"/>
 
 ## 배포 주소
->  + http://3.25.135.222/
+>  + 링크 : [⛰️WEGO⛰️](http://3.25.135.222/)
 > 
 >     + Test Login (Login 화면에서 test 클릭)
 >     + ID : tester
