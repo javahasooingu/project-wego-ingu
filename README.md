@@ -1,10 +1,18 @@
 # WeGo - 송인구
 
 - Project Manager 역할 <br> - 깃 PR 관리 <br> - 코드 컨벤션 작성 
-- 뱃지/랭킹 기능 구현 <br> - Frontend [code](https://github.com/javahasooingu/project-wego-ingu/blob/main/src/main/webapp/resources/js/badge.js)  <br> - Backend [code](https://github.com/javahasooingu/project-wego-ingu/blob/main/src/main/java/org/zerock/wego/controller/BadgeController.java)
-- 로그인 시스템 구현 Backend <br> - Google, Kakao, Naver 소셜 로그인 [code](https://github.com/javahasooingu/project-wego-ingu/blob/main/src/main/java/org/zerock/wego/controller/LoginController.java) <br> - Interceptor를 통한 로그인 페이지 이동 
+- 뱃지/랭킹 기능 구현 <br> - Frontend [badge.js](https://github.com/javahasooingu/project-wego-ingu/blob/main/src/main/webapp/resources/js/badge.js)  <br> - Backend [BadgeController](https://github.com/javahasooingu/project-wego-ingu/blob/main/src/main/java/org/zerock/wego/controller/BadgeController.java) / [RankingMapper](https://github.com/javahasooingu/project-wego-ingu/blob/main/src/main/resources/org/zerock/wego/mapper/RankingMapper.xml)
+- 로그인 시스템 구현 Backend <br> - Google, Kakao, Naver 소셜 로그인 [LoginController](https://github.com/javahasooingu/project-wego-ingu/blob/main/src/main/java/org/zerock/wego/controller/LoginController.java) / [OAuthService](https://github.com/javahasooingu/project-wego-ingu/blob/main/src/main/java/org/zerock/wego/service/oauth/OAuthService.java) <br> - Interceptor를 통한 로그인 페이지 이동 
 - 산림청 API Parsing 및 DB 저장 
-- AWS EC2, Tomcat9 를 통한 서비스 배포 [⛰️WeGo⛰️](#배포-주소)
+- AWS EC2, Tomcat9 를 통한 서비스 배포
+-------------------------------
++ 링크 : [⛰️WEGO⛰️](http://3.25.135.222/)
+   + Test Login (Login 화면에서 test 클릭)
+  + ID : tester
+  + PW : wegotester1024
+----
++ 랭킹 화면 구현 : [링크](http://3.25.135.222/ranking/highest)
++ 뱃지 화면 구현 : [링크](http://3.25.135.222/badge/767)
 
 # ⛰️ We Go 위고 ⛰️
 ----   

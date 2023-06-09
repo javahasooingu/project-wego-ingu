@@ -13,6 +13,47 @@
 			*
 		FROM
 			one_way_ranking_v
+			<!-- 
+			
+			SELECT
+				RANK() OVER (ORDER BY "on_way_value" DESC, t1.user_id ),
+				t1.user_id,
+				t1.user_pic,
+				t1.nickname,
+				t2."on_way_value"
+			FROM
+				(
+					SELECT 
+						user_id,
+						user_pic,
+						nickname
+					FROM
+						user_tb
+				) t1,
+				(
+				SELECT
+					user_id,
+					MAX(review_count) "on_way_value"
+				FROM
+					(
+						SELECT 
+							user_id,
+							san_info_id,
+							COUNT(san_review_id) review_count
+						FROM 
+							san_review_tb
+						GROUP BY
+							user_id, san_info_id
+					)
+				GROUP BY 
+					user_id
+				ORDER BY 
+					"on_way_value" DESC
+				) t2
+			WHERE
+				t1.user_id = t2.user_id
+			
+			 -->
 		WHERE
 			ranking &gt;= #{start}
 			AND ranking &lt;= #{end}
@@ -36,6 +77,41 @@
 			*
 		FROM
 			highest_ranking_v
+			<!-- 
+			
+			SELECT
+				RANK() OVER (ORDER BY "highest_value" DESC, t1.user_id ),
+				t1.user_id,
+				t1.user_pic,
+				t1.nickname,
+				"highest_value"
+			FROM
+				(
+					SELECT 
+						user_id,
+						user_pic,
+						nickname
+					FROM
+						user_tb
+				) t1,
+				(
+					SELECT
+						t1.user_id,
+						sum(t2.height) "highest_value"
+					FROM 
+						SAN_REVIEW_TB t1,
+						SAN_INFO_TB t2
+					WHERE
+						t1.san_info_id = t2.san_info_id
+					GROUP BY
+						t1.user_id
+					ORDER BY 
+						"highest_value" DESC 
+				) t2
+			WHERE
+				t1.user_id = t2.user_id
+			
+			 -->
 		WHERE
 			ranking &gt;= #{start}
 			AND ranking &lt;= #{end}
@@ -59,6 +135,38 @@
 			*
 		FROM
 			party_king_ranking_v
+			<!-- 
+			
+			SELECT 
+				RANK() OVER (ORDER BY "party_king_value" DESC, t1.user_id ),
+				t1.user_id,
+				t1.user_pic,
+				t1.nickname,
+				"party_king_value"
+			FROM
+				(
+					SELECT 
+						user_id,
+						user_pic,
+						nickname
+					FROM
+						user_tb
+				) t1,
+				(
+					SELECT
+						USER_ID,
+						COUNT(SAN_PARTY_ID) "party_king_value"
+					FROM 
+						SAN_PARTY_TB t1
+					GROUP BY
+						USER_ID 
+					ORDER BY 
+						"party_king_value" DESC
+				) t2
+			WHERE
+				t1.user_id = t2.user_id
+			
+			 -->
 		WHERE
 			ranking &gt;= #{start}
 			AND ranking &lt;= #{end}
@@ -82,6 +190,38 @@
 			*
 		FROM
 			review_king_ranking_v
+			<!-- 
+			
+			SELECT
+				RANK() OVER (ORDER BY "review_king_value" DESC, t1.user_id ),
+				t1.user_id,
+				t1.user_pic,
+				t1.nickname,
+				"review_king_value"
+			FROM
+				(
+					SELECT 
+						user_id,
+						user_pic,
+						nickname
+					FROM
+						user_tb
+				) t1,
+				(
+					SELECT 
+						COUNT(SAN_REVIEW_ID) "review_king_value",
+						USER_ID 
+					FROM 
+						SAN_REVIEW_TB t1
+					GROUP BY
+						USER_ID 
+					ORDER BY 
+						"review_king_value" DESC
+				) t2
+			WHERE
+				t1.user_id = t2.user_id
+			
+			 -->
 		WHERE
 			ranking &gt;= #{start}
 			AND ranking &lt;= #{end}
